@@ -1,5 +1,9 @@
 import { openDB } from 'idb';
 
+const DB_NAME = 'jate';
+const DB_VERSION = 1;
+const DB_STORE_NAME = 'jate';
+
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
@@ -12,10 +16,30 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+export const putDb = async (param) => {
+  try {
+    const db = await openDB(DB_NAME, DB_VERSION);
+    const readDB = db.transaction(DB_STORE_NAME, 'readwrite');
+    const readStore = readDB.objectStore(DB_STORE_NAME);
+    await readStore.put({value: param, id: 1});
+    readDB.oncomplete;
+  } catch (err) {
+    console.error('Error: ', err);
+    throw err;
+  }
+  };
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  try {
+    const db = await openDB(DB_NAME, DB_VERSION);
+    const writeDB = db.transaction(DB_STORE_NAME, 'readonly');
+    const writeStore = writeDB.objectStore(DB_STORE_NAME);
+    const data = await writeStore.get(1);
+    return data.value;
+  } catch (err) {
+    console.error('Error: ', err);
+    throw err;
+  }
+};
 
 initdb();
