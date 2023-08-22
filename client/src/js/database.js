@@ -1,12 +1,12 @@
 import { openDB } from 'idb';
-const firstLoad = document.getElementById("firstLoad");
+//const firstLoad = document.getElementById("firstLoad");
 const DB_NAME = 'jate';
 const DB_VERSION = 1;
 const DB_STORE_NAME = 'jate';
 
-setTimeout(() => {
-  firstLoad.classList.add("hidden");
-}, 3000);
+//setTimeout(() => {
+//  firstLoad.classList.add("hidden");
+//}, 3000);
 
 const initdb = async () =>
   openDB('jate', 1, {
