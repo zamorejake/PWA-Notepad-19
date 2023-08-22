@@ -20,7 +20,7 @@ This project was my first time diving into PWAs  and webpack. This project is a 
 
 ## Installation
 
-npm i (or pnpm), then run npm run start and everything should be in order.
+"**npm i"** (or pnpm), then run **"npm run start"** and everything should be in order.
 
 ## Usage
 Below are a series of images that show how the core functionality works. It's "just another text editor" after all so after running the installs and waiting for it to load 15 seconds for the first time it opens and can be downloaded in the top left and after that its just a note pad!
