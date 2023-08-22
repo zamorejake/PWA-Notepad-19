@@ -23,8 +23,16 @@ This project was my first time diving into PWAs  and webpack. This project is a 
 npm i (or pnpm), then run npm run start and everything should be in order.
 
 ## Usage
+Below are a series of images that show how the core functionality works. It's "just another text editor" after all so after running the installs and waiting for it to load 15 seconds for the first time it opens and can be downloaded in the top left and after that its just a note pad!
 
-image
+This is the main website.
+![JATE webpage](https://github.com/zamorejake/PWA-Notepad-19/blob/main/images/rest19.png)
+
+This is the main website where I open the PWA box
+![JATE opening PWA box](https://github.com/zamorejake/PWA-Notepad-19/blob/main/imagesopen19.png)
+
+This is the PWA open on my machine
+![JATE PWA OPEN ON PC](https://github.com/zamorejake/PWA-Notepad-19/blob/main/images/pwa.png)
 
 ## Credits
 
