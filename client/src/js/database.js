@@ -6,7 +6,7 @@ const DB_STORE_NAME = 'jate';
 
 setTimeout(() => {
   firstLoad.classList.add("hidden");
-}, 7000);
+}, 3000);
 
 const initdb = async () =>
   openDB('jate', 1, {
@@ -39,7 +39,7 @@ export const getDb = async () => {
     const writeDB = db.transaction(DB_STORE_NAME, 'readonly');
     const writeStore = writeDB.objectStore(DB_STORE_NAME);
     const data = await writeStore.get(1);
-    return data.value;
+    return data?.value;
   } catch (err) {
     console.error('Error: ', err);
     throw err;
